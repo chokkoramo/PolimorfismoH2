@@ -1,0 +1,74 @@
+1. *Polimorfismo en C#*:
+
+El polimorfismo es un concepto fundamental en la programación orientada a objetos (POO). Se considera uno de los pilares junto con la encapsulación y la herencia. Veamos sus dos aspectos principales:
+
+*Polimorfismo en tiempo de ejecución*:
+
+En este caso, los objetos de una clase derivada pueden tratarse como objetos de una clase base en lugares como parámetros de métodos y colecciones o matrices.
+Cuando ocurre este polimorfismo, el tipo declarado del objeto ya no es idéntico a su tipo en tiempo de ejecución.
+Por ejemplo, puedes tratar un objeto de la clase Círculo como si fuera un objeto de la clase base Forma.
+
+*Polimorfismo mediante métodos virtuales*:
+
+Las clases base pueden definir e implementar métodos virtuales, y las clases derivadas pueden invalidarlos.
+Esto significa que las clases derivadas pueden proporcionar su propia definición e implementación para un método virtual.
+En tiempo de ejecución, cuando el código de cliente llama al método, el tiempo de ejecución busca el tipo del objeto y ejecuta la versión invalidada del método virtual.
+Esto permite trabajar con grupos de objetos relacionados de manera uniforme.
+Por ejemplo, imagina una aplicación de dibujo que permite al usuario crear diferentes tipos de formas (círculos, rectángulos, triángulos) en una superficie de dibujo. El polimorfismo te permite tratar todas estas formas de manera uniforme, independientemente de su tipo específico, lo que facilita la gestión y la interacción con ellas1.
+
+2. *Tipos de Polimorfismo*:
+
+*Polimorfismo de Sobrecarga*:
+
+En este tipo, puedes sobrecargar una función o método con el mismo nombre pero diferentes parámetros.
+El compilador determina cuál versión de la función se llama según la declaración de cada función.
+Ejemplo: Polimorfismo de sobrecarga de operadores en una clase usando C#.
+
+*Polimorfismo de Coerción*:
+
+La coerción es una operación que convierte el tipo de dato del argumento al tipo esperado por la función.
+Cuando la función admite coerción en los parámetros, hablamos de polimorfismo de coerción.
+A diferencia del polimorfismo de sobrecarga, que se basa en la sintaxis, el polimorfismo de coerción se centra en la semántica.
+
+4. *Sobreescritura de Metodos*
+
+La sobreescritura de métodos en C# es una técnica fundamental en la programación orientada a objetos que permite modificar el comportamiento de los métodos heredados de una clase base en las clases derivadas. Esto se logra declarando un método en la clase derivada con el mismo nombre, tipo de retorno y lista de parámetros que el método que se quiere sobrescribir, y utilizando la palabra clave override.
+
+Cuando una clase hereda de otra clase (conocida como clase base), puede ser necesario ajustar o personalizar el comportamiento de ciertos métodos de la clase base para que se adapten mejor a las necesidades de la clase derivada. En lugar de redefinir completamente el método en la clase derivada, la sobreescritura de métodos permite modificar solo el comportamiento específico necesario, manteniendo así la estructura y la coherencia del código.
+
+5. *Beneficios*
+
+*Flexibilidad en el Diseño*:
+
+El polimorfismo permite tratar diferentes objetos de manera uniforme, independientemente de su tipo específico.
+Esto facilita la creación de código más flexible y adaptable a cambios futuros.
+
+*Simplicidad y Claridad del Código*:
+
+Al utilizar polimorfismo, puedes diseñar clases genéricas que sean aplicables a diferentes tipos de objetos.
+Esto reduce la duplicación de código y mejora la legibilidad del programa.
+
+*Reutilización de Código*:
+
+Puedes definir una funcionalidad común en una clase base y luego sobrescribir o extender esa funcionalidad en clases derivadas.
+Esto promueve la reutilización del código existente y evita duplicar lógica similar en varias partes del programa.
+
+*Expansión de Funcionalidades*:
+
+A medida que agregas nuevas clases derivadas, el polimorfismo te permite extender la funcionalidad sin afectar el código existente.
+Por ejemplo, si tienes una clase base Vehículo, puedes agregar nuevas clases como Camión o Motocicleta sin alterar el comportamiento general del programa.
+
+*Desacoplamiento*:
+
+El polimorfismo reduce el acoplamiento entre clases.
+Las clases no necesitan conocer los detalles internos de otras clases para interactuar con ellas.
+Esto mejora la modularidad y facilita el mantenimiento del código.
+
+6. *Ejemplos*
+
+- En una clase 'Transporter' puede tener un metodo llamado 'viajar()' el cual lo pueden sobreescribir cualquiera de las otras clases derivadas como 'Coche', 'Barco' o 'Avion', con cada uno se puede representar el viaje segun el metodo de transporte a la hora de ejecutar el metodo.
+
+-En un videojuego de rol (con diferentes clases que tienen ciertos atributos) cualquier clase como Mago, Guerrero o Arquero pueden Atacar(), que se define como un metodo.
+
+-Un sistema de procesamiento de pagos en línea que acepta varios métodos de pago, como tarjeta de crédito, transferencia bancaria y PayPal. Cada método de pago tiene su propio proceso de autorización y transacción.
+Cada una de las clases Paypal, Transferencia Bancaria o Tarjeta de Credito sobreescriben el metodo para realizar el pago.
